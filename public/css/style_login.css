@@ -1,0 +1,85 @@
+body{
+    background-color: #f0f6ff;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.box{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 400px;
+    width: 300px;
+    border: 1px solid #BDBDBD;
+    border-radius: 24px;
+    padding: 30px;
+}
+
+
+#email_cadastro{
+    background-image: url(../images/mail_FILL0_wght400_GRAD0_opsz48.svg);
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: 5px;
+
+}
+
+#nome_cadastro{
+    background-image: url(../images/person_FILL0_wght400_GRAD0_opsz48.svg);
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: 5px;
+}
+
+#senha_cadastro{
+    background-image: url(../images/lock_FILL0_wght400_GRAD0_opsz48.svg);
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: 5px;
+}
+
+input{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    border: 1px solid #BDBDBD;
+    border-radius: 8px;
+}
+
+.submit{
+    padding: 5px;
+    width: 206px;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+p{
+    text-align: center ;
+}
+
+a{
+    text-decoration: none;
+}
+
+.submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2F80ED;
+    color: white;
+    cursor: pointer;
+}
