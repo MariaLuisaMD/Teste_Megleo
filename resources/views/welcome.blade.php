@@ -20,6 +20,8 @@
 
     <p>Já é membro? <a href="/login">Login</a></p>
     </div>
+
+
     
 </div>
 

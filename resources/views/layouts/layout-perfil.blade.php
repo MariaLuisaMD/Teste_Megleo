@@ -10,7 +10,7 @@
     </head>
     <header>
         <nav>
-            <a href="/meus_quotes">Adicionar trecho favorito</a>
+            <a href="/meus_quotes/create">Adicionar trecho favorito</a>
             <a href="/minhas_marcacoes">Minhas marcações</a>
             <a href="/todas_marcacoes">Últimas marcações dos usuários</a>
             <a href="/perfil">Meu Perfil</a>

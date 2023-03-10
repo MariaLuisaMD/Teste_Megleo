@@ -17,9 +17,11 @@ use App\Http\Controllers\QuoteController;
 
 Route::get('/', [QuoteController::class, 'index']);
 
-Route::get('/meus_quotes', [QuoteController::class, 'create']);
+Route::get('/meus_quotes/create', [QuoteController::class, 'create']);
 
-Route::get('/login', [QuoteController::class, 'login']);
+Route::post('/produtos', [QuoteController::class,'store']);
+
+
 
 Route::get('/perfil', [QuoteController::class, 'perfil']);
 
@@ -28,3 +30,13 @@ Route::get('/perfil', [QuoteController::class, 'perfil']);
 
 
 
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
