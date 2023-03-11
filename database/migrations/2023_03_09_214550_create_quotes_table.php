@@ -15,11 +15,10 @@ class CreateQuotesTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string("titulo");
-            $table->string("autor");
-            $table->integer("pagina");
+            $table->string("tipo");
+            $table->float("valor");
+            $table->boolean("mensal");
             $table->date("data");
-            $table->text("quote");
-            
         });
     }
 

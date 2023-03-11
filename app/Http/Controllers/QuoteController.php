@@ -12,7 +12,7 @@ class QuoteController extends Controller
 
         $quotes = Quote::all();
 
-        return view('welcome',['quotes' => $quotes]);
+        return view('dashboard',['quotes' => $quotes]);
     }
 
     public function create(){
@@ -32,13 +32,13 @@ class QuoteController extends Controller
 
 
         $quotes->titulo = $request->titulo;
-        $quotes->autor = $request->autor;
-        $quotes->pagina = $request->pagina;
+        $quotes->tipo = $request->tipo;
+        $quotes->valor = $request->valor;
         $quotes->data = $request->data;
-        $quotes->quote = $request->quote;
+        $quotes->mensal = $request->mensal;
 
         $quotes -> save();
 
-        return redirect('/');
+        return redirect('/dashboard');
     }
 }

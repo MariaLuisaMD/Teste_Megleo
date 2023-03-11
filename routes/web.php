@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\QuoteController;
 
-Route::get('/', [QuoteController::class, 'index']);
+Route::get('/',);
 
 Route::get('/meus_quotes/create', [QuoteController::class, 'create']);
 
@@ -36,7 +36,5 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard',[QuoteController::class, 'index']) ->name('dashboard');
 });

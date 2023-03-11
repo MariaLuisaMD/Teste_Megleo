@@ -1,28 +1,42 @@
-@extends('layouts.layout-perfil')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Dashboard') }}
+        </h2>
+        <a href="/dashboard">Página inicial</a>
+    </x-slot>
 
-@section('title', 'HDC Events')
-
-@section('content')
-
-<div class="main">
+    <div class="py-12">
+    <div class="main">
      <div class="box">
-           <h1>Adicione seu quote</h1>
+           <h1>Adicione sua conta</h1>
             <form action="/produtos" method="POST">
                 @csrf
-                <label for="titulo">Título:</label>
+                <label for="titulo">Despesa:</label>
                 <input type="text" id="titulo" name="titulo">
-                <label for="autor">Autor:</label>
-                <input type="text" id="autor" name="autor">
-                <label for="pagina">Página:</label>
-                <input type="text" id="pagina" name="pagina">
-                <label for="data">Data:</label>
-                <input type="date" class="data" id="data" name="data">
-                <label for="quote">Insira o seu quote favorito:</label>
-                <textarea id="quote" rows="10" maxlength="180" name="quote"> </textarea>
-                <input type="submit" value="Adicionar">
+                <label for="tipo">Tipo de despesa:</label>
+                <select name="tipo" id="tipo">
+                    <option value="pessoal">Pessoal</option>
+                    <option value="alimentacao">Alimentação</option>
+                    <option value="saude">Saúde</option>
+                    <option value="lazer">Lazer</option>
+                    <option value="outros">Outros</option>
+                </select>
+                <label for="valor">Valor</label>
+                <input type="text" id="valor" name="valor">
+                <label for="mensal">Já está paga?</label>
+                <select name="mensal" id="mensal">
+                    <option value="0">Não</option>
+                    <option value="1">Sim</option>
+                </select>
+                <label for="vencimento">Vencimento:</label>
+                <input type="date" name="data" id="data">
+                <input type="submit" value="Cadastrar">
             </form>
      </div>
 </div>
+    </div>
+</x-app-layout>
 
 
-@endsection
+

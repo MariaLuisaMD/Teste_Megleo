@@ -9,6 +9,11 @@
 
          
     </head>
+    <header>
+        <nav>
+
+        </nav>
+    </header>
     <body>
         @yield('content')
     </body>
