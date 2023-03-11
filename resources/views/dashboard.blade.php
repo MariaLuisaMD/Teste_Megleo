@@ -34,25 +34,31 @@
             <h1>Todas as contas</h1>
             <div class="conta">
                 @foreach ($quotes as $quote)
-
+                @if($quote->user_id == $user->id)
                 <div class="bloco">
+                    
                     <p>{{$quote->titulo}}</p>
                     <p>R${{$quote->valor}}</p>
                     <p>Vencimento: {{date('d/m/Y', strtotime($quote->data))}}</p>
+                    <a href="/contas/{{$quote->id}}">Mais informações</a>
                 </div>
+                @endif
+        
 
                 @endforeach
             </div>
             <h1>Contas a pagar</h1>
             <div class="conta">
                 @foreach ($quotes as $quote)
-
+                @if($quote->user_id == $user->id)
                 @if($quote->mensal == 0)
                 <div class="bloco">
                     <p>{{$quote->titulo}}</p>
                     <p>R${{$quote->valor}}</p>
                     <p>Vencimento: {{date('d/m/Y', strtotime($quote->data))}}</p>
+                    <a href="/contas/{{$quote->id}}">Mais informações</a>
                 </div>
+                @endif
                 @endif
                 @endforeach
             </div>
@@ -61,13 +67,17 @@
             <h1>Contas pagas</h1>
             <div class="conta">
                 @foreach ($quotes as $quote)
+                @if($quote->user_id == $user->id)
                 @if($quote->mensal == 1)
                 <div class="bloco">
                     <p>{{$quote->titulo}}</p>
                     <p>R${{$quote->valor}}</p>
                     <p>Vencimento: {{date('d/m/Y', strtotime($quote->data))}}</p>
+                    <a href="/contas/{{$quote->id}}">Mais informações</a>
                 </div>
                 @endif
+                @endif
+    
                 @endforeach
             </div>
             

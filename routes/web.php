@@ -15,15 +15,22 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\QuoteController;
 
-Route::get('/',);
+Route::get('/',[QuoteController::class, 'comeco']);
 
-Route::get('/meus_quotes/create', [QuoteController::class, 'create']);
+Route::get('/meus_quotes/create', [QuoteController::class, 'create'])->middleware('auth');
 
 Route::post('/produtos', [QuoteController::class,'store']);
 
+Route::get('/contas/{id}',[QuoteController::class,'show']);
+
+Route::delete('/contas/delete/{id}', [QuoteController::class,'deletar'])->middleware('auth');;
+
+Route::get('/contas/edit/{id}', [QuoteController::class,'editar'])->middleware('auth');;
+
+Route::put('/contas/update/{id}', [QuoteController::class,'upd'])->middleware('auth');;
 
 
-Route::get('/perfil', [QuoteController::class, 'perfil']);
+
 
 
 
